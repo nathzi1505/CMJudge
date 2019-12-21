@@ -1,11 +1,11 @@
 # CMJudge
 
 ## Routes 
-`/` : Root Page <br>
-`/users` : Profile Page <br>
-`/assignmentName` : Problem Description <br>
-`/assignmentName/submit` : Submission Page <br>
-`/assignmentName/results` : Results Page <br>
+* `/` : Root Page <br>
+* `/users` : Profile Page <br>
+* `/assignmentName` : Problem Description <br>
+* `/assignmentName/submit` : Submission Page <br>
+* `/assignmentName/results` : Results Page <br>
 
 ## Prequisites
 Autentication required
