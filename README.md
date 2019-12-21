@@ -1,7 +1,7 @@
 # CMJudge
 
 ## Routes 
-* `/` : Root Page <br>
+* `/` : Home Page <br>
 * `/users` : Profile Page <br>
 * `/assignmentName` : Problem Description <br>
 * `/assignmentName/submit` : Submission Page <br>
