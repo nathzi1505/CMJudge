@@ -12,20 +12,19 @@ Autentication required
 
 ## Models
 ### User :
- * `roll`
- * `problems_solved`
-  (List of all Problem (s) (to be done in frontend, indicate *completed* : the corresponding problems))
- * `password`
+ * `roll` (Integer) (Primary Key)
+ * `problems_solved` (Integer)
+ * `password` (Hashed CharText)
  
 ### Assignment : 
- * `name`
- * `id`
+ * `name` (Char Field)
+ * `id` (Integer) (Primary Key)
  
 ### Problem : 
- * `assignment_id` (Foreign Key)
+ * `assignment_id` (CharField) (Primary Key) 
  * `user_id` (Foreign Key)
- * `problem_question` (CharField)
- * `test-cases` (Char Field)
+ * `problem_desc` (CharField)
+ * `test_cases` (Char Field)
 
 ## References : 
 * [DRF REACT](https://wsvincent.com/django-rest-framework-react-tutorial/) 
