@@ -25,6 +25,11 @@ Autentication required
  * `user_id` (Foreign Key)
  * `problem_desc` (CharField)
  * `test_cases` (Char Field)
+ * `difficulty` (Integer)
+ 
+ ### Solved : 
+ * `user_id` (Foreign Key)
+ * `assignment_id` (Foreign Key)
 
 ## References : 
 * [DRF REACT](https://wsvincent.com/django-rest-framework-react-tutorial/) 
