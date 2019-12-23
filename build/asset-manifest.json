@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/CMJudge/static/css/main.d1b05096.chunk.css",
+    "main.js": "/CMJudge/static/js/main.2253e9a0.chunk.js",
+    "main.js.map": "/CMJudge/static/js/main.2253e9a0.chunk.js.map",
+    "runtime-main.js": "/CMJudge/static/js/runtime-main.5c485e16.js",
+    "runtime-main.js.map": "/CMJudge/static/js/runtime-main.5c485e16.js.map",
+    "static/css/2.ef23f0a5.chunk.css": "/CMJudge/static/css/2.ef23f0a5.chunk.css",
+    "static/js/2.3bd0d479.chunk.js": "/CMJudge/static/js/2.3bd0d479.chunk.js",
+    "static/js/2.3bd0d479.chunk.js.map": "/CMJudge/static/js/2.3bd0d479.chunk.js.map",
+    "index.html": "/CMJudge/index.html",
+    "precache-manifest.48c2f96ca94bc7c63060c7807b5c17c0.js": "/CMJudge/precache-manifest.48c2f96ca94bc7c63060c7807b5c17c0.js",
+    "service-worker.js": "/CMJudge/service-worker.js",
+    "static/css/2.ef23f0a5.chunk.css.map": "/CMJudge/static/css/2.ef23f0a5.chunk.css.map",
+    "static/css/main.d1b05096.chunk.css.map": "/CMJudge/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.3bd0d479.chunk.js.LICENSE": "/CMJudge/static/js/2.3bd0d479.chunk.js.LICENSE",
+    "static/media/font-awesome.min.css": "/CMJudge/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5c485e16.js",
+    "static/css/2.ef23f0a5.chunk.css",
+    "static/js/2.3bd0d479.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.2253e9a0.chunk.js"
+  ]
+}
