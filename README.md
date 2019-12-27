@@ -16,9 +16,13 @@ Autentication required
  * `problems_solved` (Integer)
  * `password` (Hashed CharText)
  
+### Assignment :
+ * `id` (Primary Key)
+ * `name` (CharField)
+ 
 ### Question : 
  * `id` (Primary Key)
- * `assignment_id` (Integer)
+ * `assignment_id` (Foreign Key)
  * `code` (CharField)
  * `problem_desc` (CharField)
  * `test_cases` (CharField)
