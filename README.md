@@ -16,20 +16,18 @@ Autentication required
  * `problems_solved` (Integer)
  * `password` (Hashed CharText)
  
-### Assignment : 
- * `name` (Char Field)
- * `id` (Integer) (Primary Key)
- 
-### Problem : 
- * `assignment_id` (CharField) (Primary Key) 
- * `user_id` (Foreign Key)
+### Question : 
+ * `id` (Primary Key)
+ * `assignment_id` (Integer)
+ * `code` (CharField)
  * `problem_desc` (CharField)
- * `test_cases` (Char Field)
+ * `test_cases` (CharField)
  * `difficulty` (Integer)
  
  ### Solved : 
+ * `id` (Primary Key)
  * `user_id` (Foreign Key)
- * `assignment_id` (Foreign Key)
+ * `question_id` (Foreign Key)
 
 ## References : 
 * [DRF REACT](https://wsvincent.com/django-rest-framework-react-tutorial/) 
