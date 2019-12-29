@@ -11,7 +11,8 @@
 Autentication required
 
 ## Models
-### User :
+### Profile :
+ * `user` (User)
  * `roll` (Integer) (Primary Key)
  * `password` (Hashed CharText)
  
@@ -23,8 +24,12 @@ Autentication required
  * `id` (Primary Key)
  * `assignment_id` (Foreign Key)
  * `code` (CharField)
- * `problem_desc` (CharField)
- * `test_cases` (CharField)
+ * `problem_desc` (TextField)
+ * `sample_input` (TextField)
+ * `sample_output` (TextField)
+ * `input_cases` (TextField)
+ * `output_cases` (TextField)
+ * `discussions` (TextField)
  * `difficulty` (Integer)
  
  ### Solved : 
