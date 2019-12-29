@@ -13,7 +13,6 @@ Autentication required
 ## Models
 ### User :
  * `roll` (Integer) (Primary Key)
- * `problems_solved` (Integer)
  * `password` (Hashed CharText)
  
 ### Assignment :
