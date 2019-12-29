@@ -7,9 +7,6 @@
 * `/assignmentName/submit` : Submission Page <br>
 * `/assignmentName/results` : Results Page <br>
 
-## Prequisites
-Autentication required
-
 ## Models
 ### Profile :
  * `user` (User)
