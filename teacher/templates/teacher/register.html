@@ -1,0 +1,26 @@
+{% extends "my_App/base.html" %}
+{% block title %}
+    | teacher | register
+{% endblock %}
+{% block main_content %}
+    <div class="col-md-8">
+    <h1 class="my-4">
+      <center>Teacher Registration</center>
+    </h1>
+    <hr>
+    <!-- Blog Post -->
+      <div class="card mb-4">
+        <div class="card-body">
+            <form action="/teacher/api/register" method="post" enctype="multipart/form-data" id="submitform">
+              {% csrf_token %}
+              <p><label>First Name</label><input type="text" class="form-control" placeholder="" name="first"></p>
+              <p><label>Last Name</label><input type="text" class="form-control" placeholder="" name="last"></p>
+              <p><label>Email Id</label><input type="email" class="form-control"placeholder="" name="email"</p>
+              <p><label>Username</label><input type="text" class="form-control" placeholder="" name="username"></p>
+              <p><label>Password</label><input type="password" class="form-control" placeholder="" name="password"></p>
+              <input class="btn btn-primary col-4 pull-right" value="Register" type="submit">
+            </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'my_App/base.html' %}
+{% block title %}
+    | {{ assignment.code }} 
+{% endblock %}
+{% block main_content %}
+    <div class="col-md-8">
+        <h1 class="my-4">
+          <center>{{course.name}}</center>
+        </h1>
+        <hr>
+        <h2 class="my-4">
+          <center>{{ assignment.name }}</center>
+        </h2>
+        <hr>
+        <h3 class="my-4">
+          <center>Questions</center>
+        </h3>
+        <!-- Blog Post -->
+        {% for question in questions %}
+            <a href="{{assignment.code}}/{{question.code}}" style="text-decoration: none; color:black;">
+            <div class="card mb-4">
+                <div class="card-body">
+                <p class="card-text"><h3>{{ question.name }}
+                <span class="pull-right">
+                    {% for i in question.n %}
+                        <span>★</span>
+                    {% endfor %}
+                    {% for i in question.not_n %}
+                    <span>☆</span>
+                    {% endfor %}
+                </span></h3></p>
+                </div>
+            </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'my_App/base.html' %}
+{% block title %}
+    | {{ course.abbreviation }}
+{% endblock %}
+{% block main_content %}
+    <div class="col-md-8">
+        <h1 class="my-4">
+          <center>{{course.name}}</center>
+        </h1>
+        <hr>
+        <h3 class="my-4">
+          <center>Assignments</center>
+        </h3>
+        <hr>
+        <!-- Blog Post -->
+        {% for assignment in assignments %}
+            <div class="card mb-4">
+                <a href="{{course.abbreviation}}/{{assignment.code}}" style="text-decoration: none; color:black;">
+                <div class="card-body">
+                <p class="card-text"><h3>{{ assignment.name }}</h3></p>
+                <a href="{{course.abbreviation}}/{{assignment.code}}/set">
+                    <button class="pull-left btn btn-primary btn-sm"> + Question</button>
+                </a>
+                &nbsp;
+                <a href="/teacher/csv/{{course.abbreviation}}/{{assignment.code}}"
+                <button class="btn btn-primary btn-sm">↓ Assignment Status</button></a>
+                <span class="pull-right text-monospace">{{ assignment.code }}</span>
+                </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

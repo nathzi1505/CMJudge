@@ -1,0 +1,27 @@
+{% extends "my_App/base.html" %}
+{% block title %}
+    | {{ course.abbreviation }} | {{ assignment.code }} | {{ question.code }} | testcase
+{% endblock %}
+{% block main_content %}
+    <div class="col-md-8">
+    <h1 class="my-4">
+      <center>Test Case</center>
+    </h1>
+    <hr>
+    <!-- Blog Post -->
+      <div class="card mb-4">
+        <div class="card-body">
+            <form action="/teacher/api/{{course.abbreviation}}/{{assignment.code}}/{{question.code}}/testcase" method="post" enctype="multipart/form-data" id="submitform">
+                  {% csrf_token %}
+                  <p><label>Course</label><input type="text" class="form-control" name="course_name" value="{{course.name}}" readonly></p>
+                  <p><label>Assignment</label><input type="text" class="form-control" name="assignment_name" value="{{assignment.name}}" readonly></p>
+                  <p><label>Question Name</label><input type="text" class="form-control" name="name" value={{question.name}} readonly></p>
+                  <p><label>Description</label><input type="text" class="md-textarea form-control" name="testcase_desc"></input></p>
+                  <p><label>Input Case</label><textarea class="md-textarea form-control text-monospace" name="input_case" rows="5"></textarea></p>
+                  <p><label>Output Case</label><textarea class="md-textarea form-control text-monospace" name="output_case" rows="5"></textarea></p>
+                  <input class="btn btn-primary col-4 pull-right" value="Add Test Case" type="submit">
+            </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

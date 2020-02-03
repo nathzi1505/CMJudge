@@ -1,0 +1,54 @@
+{% extends "my_App/base.html" %}
+{% block link_to_questions %}
+  <a class="nav-link" href="/{{ assignment_name }}">Questions</a>
+{% endblock %}
+{% block main_content %}
+  <!-- Blog Entries Column -->
+  <div class="col-md-8">
+    <h1 class="my-4">
+      <center>{{ course.name }}</center>
+    </h1>
+    <hr>
+    <h2 class="my-4">
+      <center>{% block assignment_name %}{% endblock %}</center>
+    </h2>
+    <hr>
+    <h3 class="my-4">
+      <center>{{ name }}</center>
+    </h3>
+    <hr>
+    <h3>
+      Code : {% block question_code %}{% endblock %}
+      <span class="stars" style="float:right">
+        Difficulty : {% block stars %}{% endblock %}
+      </span>
+    </h3>
+    <!-- Blog Post -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h2 class="card-title">Question</h2>
+        <p class="card-text">{% block question %}{% endblock %}</p>
+      </div>
+    </div>
+    <div class="card mb-4">
+      <div class="card-body">
+        <h2 class="card-title">Input Samples</h2>
+        <tt><p style="card-text">{% block input %}{% endblock %}</p></tt>
+      </div>
+    </div>
+    <div class="card mb-4">
+      <div class="card-body">
+        <h2 class="card-title">Output Samples</h2>
+        <tt><p class="card-text">{% block output %}{% endblock %}</p></tt>
+      </div>
+    </div>
+    <div style="padding-bottom: 1em">
+      <a class="btn btn-primary col-4" type="submit" href="{{ code }}/submit">Submit</a>
+    </div>
+    <div style="padding-bottom: 1em">
+      <hr style="border: 1px solid #000000;">
+    </div>
+    {% block discussions %}
+    {% endblock %}
+  </div>
+{% endblock %}

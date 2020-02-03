@@ -1,0 +1,14 @@
+{% extends "my_App/submit_layout.html" %}
+{% block form_body %}
+<form action="/{{course.abbreviation}}/{{assignment.name}}/{{code}}/submit" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <p>
+  <input type="file" name="source_code">
+  <input type="text" class="pull-right" placeholder="C++" name="lang">
+  </p>
+  <center>
+    <a href="submit?text=True" class="btn btn-primary col-4">Write Code</a>
+    <input class="btn btn-primary col-4" value="Upload" type="submit">
+  </center>
+</form>
+{% endblock %}

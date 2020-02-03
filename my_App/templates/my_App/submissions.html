@@ -1,0 +1,39 @@
+{% extends "my_App/base.html" %}
+{% block title %}
+    | submissions
+{% endblock %}
+{% block main_content %}
+    <div class="col-md-8">
+    <h1 class="my-4">
+      <center>Successful Submissions</center>
+    </h1>
+    <hr>
+    <!-- Blog Post -->
+      <div class="card mb-4">
+        <div class="card-body">
+            <table class="table" style="text-align:center;">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Question</th>
+                <th scope="col">Assignment</th>
+                <th scope="col">Course</th>
+                <th scope="col">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for submission in submissions %}
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ submission.question.name }} </td>
+                <td>{{ submission.assignment.name }} </td>
+                <td>{{ submission.course.name }} </td>
+                <td>{{ submission.time_of_submission }} </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+{% endblock %}

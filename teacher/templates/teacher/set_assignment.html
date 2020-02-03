@@ -1,0 +1,24 @@
+{% extends "my_App/base.html" %}
+{% block title %}
+    set | assignment
+{% endblock %}
+{% block main_content %}
+    <div class="col-md-8">
+    <h1 class="my-4">
+      <center>Assignment</center>
+    </h1>
+    <hr>
+    <!-- Blog Post -->
+      <div class="card mb-4">
+        <div class="card-body">
+            <form action="/teacher/api/{{course.abbreviation}}/set" method="post" enctype="multipart/form-data" id="submitform">
+              {% csrf_token %}
+              <p><label>Course</label><input type="text" class="form-control" name="course_name" value="{{course.name}}" readonly></p>
+              <p><label>Name</label><input type="text" class="form-control" name="name"></p>
+              <p><label>Code</label><input type="text" class="form-control" name="code"></p>
+              <input class="btn btn-primary col-4 pull-right" value="Add Assignment" type="submit">
+            </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

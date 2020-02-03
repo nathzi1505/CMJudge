@@ -1,0 +1,50 @@
+{% extends "my_App/base.html" %}
+{% block title %}
+    | {{ code }} | results
+{% endblock %}
+{% block main_content %}
+    <div class="col-md-8">
+    <h1 class="my-4">
+      <center>{{course.name}}</center>
+    </h1>
+    <hr>
+    <h2 class="my-4">
+      <center>{{assignment.name}}</center>
+    </h1>
+    <hr>
+    <h3 class="my-4">
+      <center>Results</center>
+    </h3>
+    <hr>
+    <h3 class="my-4">
+      <center>{{ name }} | {{ code }} </center>
+    </h3>
+    <hr>
+    <!-- Blog Post -->
+      <div class="card mb-4">
+        <div class="card-body">
+            <table class="table" style="text-align:center">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Test Case</th>
+                <th scope="col">Result</th>
+                <th scope="col">Elapsed (in s)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for r in response %}
+              <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ r.description }}</td>
+                <td>{% if r.result == True %} <span class="text-success">Correct</span> {% else %} 
+                <span class="text-danger">❌</span> {% endif %}</td>
+                <td class="text-monospace">{{ r.elapsed|floatformat:4 }} </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "my_App/base.html" %}
+{% block title %}
+    set | question
+{% endblock %}
+{% block main_content %}
+    <div class="col-md-8">
+    <h1 class="my-4">
+      <center>Question</center>
+    </h1>
+    <hr>
+    <!-- Blog Post -->
+      <div class="card mb-4">
+        <div class="card-body">
+            <form action="/teacher/api/{{course.abbreviation}}/{{assignment.code}}/set" method="post" enctype="multipart/form-data" id="submitform">
+              {% csrf_token %}
+              <p><label>Course</label><input type="text" class="form-control" name="course_name" value="{{course.name}}" readonly></p>
+              <p><label>Assignment</label><input type="text" class="form-control" name="assignment_name" value="{{assignment.name}}" readonly></p>
+              <p><label>Name</label><input type="text" class="form-control" name="name"></p>
+              <p><label>Code</label><input type="text" class="form-control" name="code"></p>
+              <p><label>Problem Description</label><textarea class="md-textarea form-control" name="problem_desc" rows="10"></textarea></p>
+              <p><label>Sample Input</label><textarea class="md-textarea form-control text-monospace" name="sample_input" rows="5"></textarea></p>
+              <p><label>Sample Output</label><textarea class="md-textarea form-control text-monospace" name="sample_output" rows="5"></textarea></p>
+              <p><label>Discussions</label><textarea class="md-textarea form-control" name="discussions" rows="5"></textarea></p>
+              <p><label>Difficulty</label><input type="number" class="form-control" name="difficulty"></p>
+              <input class="btn btn-primary col-4 pull-right" value="Add Question" type="submit">
+            </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

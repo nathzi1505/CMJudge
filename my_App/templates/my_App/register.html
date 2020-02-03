@@ -1,0 +1,26 @@
+{% extends "my_App/base.html" %}
+{% block title %}
+    | register
+{% endblock %}
+{% block main_content %}
+    <div class="col-md-8">
+    <h1 class="my-4">
+      <center>Register</center>
+    </h1>
+    <hr>
+    <!-- Blog Post -->
+      <div class="card mb-4">
+        <div class="card-body">
+            <form action="/api/register" method="post" enctype="multipart/form-data" id="submitform">
+              {% csrf_token %}
+              <p><label>Roll Number</label><input type="text" class="form-control" placeholder="Enter your full roll number" name="roll_no"></p>
+              <p><label>First Name</label><input type="text" class="form-control" placeholder="First Name" name="first"></p>
+              <p><label>Last Name</label><input type="text" class="form-control" placeholder="Last Name" name="last"></p>
+              <p><label>Username</label><input type="text" class="form-control" placeholder="Username" name="username"></p>
+              <p><label>Password</label><input type="password" class="form-control" placeholder="Password" name="password"></p>
+              <input class="btn btn-primary col-4 pull-right" value="Submit" type="submit">
+            </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

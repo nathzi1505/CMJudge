@@ -1,0 +1,31 @@
+{% extends "my_App/base.html" %}
+{% block title %}
+    | Course Enrollment
+{% endblock %}
+{% block main_content %}
+    <div class="col-md-8">
+    <h1 class="my-4">
+      <center>Course Enrollment</center>
+    </h1>
+    <hr>
+    <!-- Blog Post -->
+      <div class="card mb-4">
+        <div class="card-body">
+            <form action="/teacher/api/course_enrollment" method="post" enctype="multipart/form-data" id="submitform">
+                  {% csrf_token %}
+                  <p><label>Student</label><select name="student_id" class="form-control">
+                  {% for student in students %}
+                    <option value="{{student.id}}">{{student.roll_no}} | {{student.user.get_full_name}}</option>
+                  {% endfor %}
+                  </select></p>
+                  <p><label>Course</label><select name="course_abbreviation" class="form-control">
+                  {% for course in courses %}
+                    <option value="{{course.abbreviation}}">{{course.name}}</option>
+                  {% endfor %}
+                  </select></p>
+              <input class="btn btn-primary col-4 pull-right" value="Enroll Student" type="submit">
+            </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

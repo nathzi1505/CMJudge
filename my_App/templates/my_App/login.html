@@ -1,0 +1,23 @@
+{% extends "my_App/base.html" %}
+{% block title %}
+    | login
+{% endblock %}
+{% block main_content %}
+    <div class="col-md-8">
+    <h1 class="my-4">
+      <center>Login</center>
+    </h1>
+    <hr>
+    <!-- Blog Post -->
+      <div class="card mb-4">
+        <div class="card-body">
+            <form action="/api/login" method="post" enctype="multipart/form-data" id="submitform">
+              {% csrf_token %}
+              <p><label>Username</label><input type="text" class="form-control" placeholder="Username" name="username"></p>
+              <p><label>Password</label><input type="password" class="form-control" placeholder="Password" name="password"></p>
+              <input class="btn btn-primary col-4 pull-right" value="Submit" type="submit">
+            </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

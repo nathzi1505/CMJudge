@@ -1,0 +1,29 @@
+{% extends "my_App/base.html" %}
+{% block title %}
+    | course | register
+{% endblock %}
+{% block main_content %}
+    <div class="col-md-8">
+    <h1 class="my-4">
+      <center>Course Registration</center>
+    </h1>
+    <hr>
+    <!-- Blog Post -->
+      <div class="card mb-4">
+        <div class="card-body">
+            <form action="/teacher/api/course/register" method="post" enctype="multipart/form-data" id="submitform">
+              {% csrf_token %}
+              <p><label>Name</label><input type="text" class="form-control" placeholder="Name" name="name"></p>
+              <p><label>Code</label><input type="text" class="form-control" placeholder="Code" name="code"></p>
+              <p><label>Abbreviation</label><input type="text" class="form-control" placeholder="Abbreviation" name="abbreviation"></p>
+              <p><label>Teacher</label><select name="teacher" class="form-control">
+              {% for teacher in teachers %}
+                <option value="{{teacher.id}}">{{teacher}}</option>
+              {% endfor %}
+              </select></p>
+              <input class="btn btn-primary col-4 pull-right" value="Register Course" type="submit">
+            </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

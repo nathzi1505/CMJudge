@@ -1,0 +1,38 @@
+{% extends "my_App/problem_page_layout.html" %}
+{% block title %}
+    | {{course.abbreviation}} | {{ code }}
+{% endblock %}
+{% block assignment_name %}
+    {{ assignment.name }}
+{% endblock %}
+{% block question_code %}
+    {{ code }}
+{% endblock %}
+{% block stars %}
+    {% for i in n %}
+        <span>★</span>
+    {% endfor %}
+    {% for i in not_n %}
+        <span>☆</span>
+    {% endfor %}
+{% endblock %}
+{% block question %}
+    {{ problem_desc|linebreaks }}
+{% endblock %}
+{% block input %}
+    {{ sample_input|linebreaks }}
+{% endblock %}
+{% block output %}
+    {{ sample_output|linebreaks  }}
+{% endblock %}
+{% block discussions %}
+    {% if discussions %}
+    <div class="card mb-4">
+      <div class="card-body">
+        <h2 class="card-title">Discussions</h2>
+        <p class="card-text">{{ discussions }}</p>
+      </div>
+    </div>
+    {% endif %}
+{% endblock %}
+

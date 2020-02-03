@@ -1,0 +1,38 @@
+{% extends "teacher/question_page_layout.html" %}
+{% block title %}
+    | {{course.abbreviation}} | {{assignment.name}} | {{ question.code }}
+{% endblock %}
+{% block assignment_name %}
+    {{ assignment.name }}
+{% endblock %}
+{% block question_code %}
+    {{ question.code }}
+{% endblock %}
+{% block stars %}
+    {% for i in n %}
+        <span>★</span>
+    {% endfor %}
+    {% for i in not_n %}
+        <span>☆</span>
+    {% endfor %}
+{% endblock %}
+{% block question %}
+    {{ question.problem_desc|linebreaks }}
+{% endblock %}
+{% block input %}
+    {{ question.sample_input|linebreaks }}
+{% endblock %}
+{% block output %}
+    {{ question.sample_output|linebreaks  }}
+{% endblock %}
+{% block discussions %}
+    {% if question.discussions %}
+    <div class="card mb-4">
+      <div class="card-body">
+        <h2 class="card-title">Discussions</h2>
+        <p class="card-text">{{ question.discussions }}</p>
+      </div>
+    </div>
+    {% endif %}
+{% endblock %}
+
